@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título de Iniciar Sesión -->
+
+    <!-- Campo de Usuario -->
+
+    <TextView
+        android:layout_width="376dp"
+        android:layout_height="42dp"
+        android:background="#5AE4A8"
+        android:text="Iniciar sesión"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="259dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#5AE4A8"
+        android:hint="Usuario"
+        android:inputType="textEmailAddress" />
+
+    <!-- Campo de Contraseña -->
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#5AE4A8"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
+
+    <!-- Botón para Ingresar -->
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#5AE4A8"
+        android:text="Ingresar"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
