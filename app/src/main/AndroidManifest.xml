@@ -10,23 +10,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Qtad"
+        android:theme="@style/Theme.Qta2"
         tools:targetApi="31">
+
+        <!-- Actividad principal -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividades existentes -->
         <activity
             android:name=".inputsi"
             android:exported="false" />
         <activity
             android:name=".logintod"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- NUEVAS ACTIVIDADES -->
+        <activity
+            android:name=".SplitHalfActivity"
+            android:exported="false"
+            android:label="Dos mitades"/>
+
+        <activity
+            android:name=".RemoveFragmentActivity"
+            android:exported="false"
+            android:label="Quitar fragmento"/>
+
     </application>
 
 </manifest>

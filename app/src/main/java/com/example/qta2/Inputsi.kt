@@ -9,37 +9,34 @@ import androidx.appcompat.app.AppCompatActivity
 class inputsi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inputsi) // Asegúrate de que el nombre del layout sea correcto
+        setContentView(R.layout.activity_inputsi)
 
         // Referencias a los elementos del layout
-        val inputText: EditText = findViewById(R.id.input_text) // Campo de entrada
-        val solveButton: Button = findViewById(R.id.solve_button) // Botón para solucionar
+        val inputText: EditText = findViewById(R.id.input_text)
+        val solveButton: Button = findViewById(R.id.solve_button)
 
         // Acción al pulsar el botón
         solveButton.setOnClickListener {
-            val input = inputText.text.toString()
+            val input = inputText.text.toString().trim()
 
             // Lógica para manejar la cadena ingresada
-            val resultado = intercambiarPalabras(input)
-            if (resultado == "error") {
-                Toast.makeText(this, "Por favor, ingresa exactamente 2 palabras.", Toast.LENGTH_SHORT).show()
+            if (input.isEmpty()) {
+                Toast.makeText(this, "Por favor, ingresa una cadena de caracteres", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Resultado: $resultado", Toast.LENGTH_SHORT).show()
+                val resultado = dividirMitades(input)
+                Toast.makeText(this, "Resultado: $resultado", Toast.LENGTH_LONG).show()
             }
         }
     }
 
-    // Función para intercambiar palabras
-    private fun intercambiarPalabras(cadena: String): String {
-        // Dividir la cadena en palabras
-        val palabras = cadena.split(" ")
+    // Función para dividir la cadena en dos mitades e intercambiarlas
+    private fun dividirMitades(cadena: String): String {
+        val longitud = cadena.length
+        val mitad = (longitud + 1) / 2 // Para cadenas impares, la primera mitad será más grande
 
-        // Validar si hay exactamente dos palabras
-        return if (palabras.size != 2) {
-            "error"
-        } else {
-            // Intercambiar las palabras
-            "${palabras[1]} ${palabras[0]}"
-        }
+        val primeraMitad = cadena.substring(0, mitad)
+        val segundaMitad = if (mitad < longitud) cadena.substring(mitad) else ""
+
+        return segundaMitad + primeraMitad
     }
 }

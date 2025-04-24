@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".inputsi">
+    android:background="@android:color/white"
+    tools:context=".SplitHalfActivity"
+    tools:ignore="ExtraText">
 
-    <!-- Título principal con estilo de encabezado -->
+    <!-- Título principal -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dos palabras"
-    android:textAlignment="center"
-    android:textColor="@android:color/black"
-    android:textSize="24sp"
-    android:textStyle="bold"
-    android:layout_marginBottom="16dp"/>
+        android:text="Dos mitades"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- Subtítulo con estilo secundario -->
+    <!-- Saludo al usuario -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         android:textSize="16sp"
         android:layout_marginBottom="24dp"/>
 
-    <!-- Descripción del problema -->
+    <!-- Instrucciones -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,27 +50,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2. Te ayudaré a cortar la cadena en dos partes &quot;iguales&quot; (si la longitud de la cadena es impar, colocaré el carácter central en la primera cadena)."
-        android:textColor="#FF000000"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+        android:text="2. Te ayudaré a cortar la cadena en dos partes \"
+        android:iguales\" (si la longitud es impar, la primera mitad tendrá un carácter más)."
+    android:textColor="#FF000000"
+    android:textSize="16sp"
+    android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3. Luego imprimiré la nueva cadena con las mitades intercambiadas."
+        android:text="3. Mostraré la nueva cadena con las mitades intercambiadas."
         android:textColor="#FF000000"
         android:textSize="16sp"
         android:layout_marginBottom="24dp"/>
 
-    <!-- Línea divisoria -->
+    <!-- Separador -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#E0E0E0"
         android:layout_marginBottom="24dp"/>
 
-    <!-- Etiqueta del campo de entrada -->
+    <!-- Campo de entrada -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,39 +81,44 @@
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Campo de entrada con estilo mejorado -->
     <EditText
-        android:id="@+id/input_text"
+        android:id="@+id/etInput"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:minHeight="56dp"
-        android:hint="Hello"
-        android:background="@drawable/edittext_background"
-        android:padding="16dp"
+        android:layout_height="48dp"
+        android:hint="Ejemplo: Hello"
+        android:background="@drawable/edittext_border"
+        android:padding="12dp"
         android:layout_marginBottom="24dp"
         android:textColor="#FF000000"
-        android:textColorHint="#80000000"
-        android:textSize="16sp"
-        android:inputType="text"/>
+        android:textSize="16sp"/>
 
-    <!-- Línea divisoria -->
+    <!-- Separador -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#E0E0E0"
         android:layout_marginBottom="24dp"/>
 
-    <!-- Botón de acción con mejor contraste -->
+    <!-- Botón para solucionar -->
     <Button
-        android:id="@+id/solve_button"
+        android:id="@+id/btnSolve"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:minHeight="56dp"
+        android:layout_height="48dp"
         android:text="Solucionar"
         android:backgroundTint="#5AE4A8"
         android:textColor="#FF000000"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:padding="12dp"
-        android:elevation="2dp"/>
+        android:textSize="18sp"/>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#FF5AE4A8"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"/>
 </LinearLayout>

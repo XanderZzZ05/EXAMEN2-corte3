@@ -1,4 +1,4 @@
-package com.example.qtad
+package com.example.qta2
 
 import android.content.Intent
 import android.os.Bundle
